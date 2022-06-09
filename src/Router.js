@@ -16,13 +16,12 @@ import LoginMinseok from './pages/minseok/Login/Login';
 import MainMinseok from './pages/minseok/Main/Main';
 
 // import 한 컴포넌트에 대한 경로를 각각 설정해줍니다.
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
         <Route path="/login-intae" element={<LoginIntae />} />
         <Route path="/main-intae" element={<MainIntae />} />
         <Route path="/login-bohyun" element={<LoginBohyun />} />
