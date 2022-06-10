@@ -1,0 +1,505 @@
+/* common */
+* {
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+body::-webkit-scrollbar {
+  background-color: #fafafa;
+  display: none;
+}
+
+.story {
+  border: 3px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, red 0%, orange 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 50%;
+}
+
+.loadallBtn {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.mainNav {
+  width: 100vw;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(212, 206, 206);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  .goHome {
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .homeAnchor {
+      text-decoration: none;
+
+      .logoBox {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .instaLogoImage {
+          width: 30px;
+          height: 30px;
+        }
+
+        .emptyBorder {
+          width: 1.5px;
+          height: 30px;
+          background-color: gray;
+          margin: 0 20px;
+        }
+
+        .logoText {
+          font-size: 25px;
+          font-family: 'Lobster', cursive;
+          color: black;
+        }
+      }
+    }
+  }
+  .search {
+    width: 40vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .searchId {
+      width: 40%;
+      height: 35%;
+      border-radius: 3px;
+      border: 1px solid rgb(212, 206, 206);
+      background-color: rgb(250, 250, 250);
+      background-image: url('../../../assets/eunkyeong/magnifyingglass.png');
+      background-position: 35% center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      text-align: center;
+
+      &:focus {
+        background-image: none;
+        text-align: start;
+      }
+    }
+  }
+}
+
+.socialIcons {
+  width: 25vw;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .compass,
+  .likes,
+  .human {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+  }
+}
+
+.mainPageMain {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 80px;
+
+  .feeds {
+    width: 65%;
+    height: 80%;
+    position: relative;
+
+    .stories {
+      width: 100%;
+      height: 110px;
+      background-color: white;
+      border: 1px solid rgb(212, 206, 206);
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .story {
+        width: 70px;
+        height: 70px;
+        background-image: url('../../../assets/eunkyeong/avocado.jpg'),
+          linear-gradient(to right, red 0%, orange 100%);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+    .article1 {
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border: 1px solid rgb(212, 206, 206);
+      border-radius: 3px;
+      background-color: white;
+
+      .userProfile {
+        width: 100%;
+        height: 50px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .userPhoto {
+          width: 110px;
+          height: auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-left: 20px;
+
+          .userFace {
+            width: 30px;
+            height: 30px;
+            border: 1px solid gray;
+            border-radius: 50%;
+          }
+
+          .userId {
+            font-weight: bold;
+          }
+        }
+
+        .seeMoreBtn {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+
+          .optionImage {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      .feedImage {
+        width: 100%;
+        height: auto;
+        .pizzaImage {
+          width: 100%;
+        }
+      }
+    }
+    .feedContents {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+
+      .responseIcons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .feedButton {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 20px;
+          padding: 0;
+        }
+        .heartBtn {
+          width: 27px;
+          height: 27px;
+          background-image: url('../../../assets/eunkyeong/like.png');
+          background-size: contain;
+        }
+
+        .commentBtn {
+          width: 27px;
+          height: 27px;
+          margin: 0 5px;
+          background-image: url('../../../assets/eunkyeong/comment.png');
+          background-size: contain;
+        }
+
+        .directMessageBtn {
+          width: 27px;
+          height: 27px;
+          background-image: url('../../../assets/eunkyeong/send.png');
+          background-size: contain;
+        }
+
+        .iconsRight {
+          font-size: 25px;
+        }
+      }
+      .likesFigure {
+        width: 100%;
+        height: auto;
+        margin-top: 8px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .userComment {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+
+        .myId {
+          font-weight: bold;
+        }
+
+        .myComment {
+          font-weight: lighter;
+          margin-left: 10px;
+        }
+      }
+      .registerdReply {
+        margin: 5px 0;
+        width: 100%;
+        height: auto;
+        position: relative;
+
+        .friendsId {
+          font-weight: bold;
+        }
+
+        .friendsComment {
+          font-weight: lighter;
+          margin-left: 10px;
+        }
+
+        .replyLike {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          position: absolute;
+          right: 5px;
+
+          .fa-heart {
+            color: gray;
+          }
+          .red {
+            color: red;
+          }
+        }
+      }
+
+      .uploadDate {
+        color: gray;
+        font-size: 13px;
+        margin-top: 3px;
+      }
+    }
+    .reply {
+      width: 100%;
+      height: auto;
+      position: relative;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      #replyList {
+        width: 80%;
+        height: auto;
+        margin: 5px 0px 10px 10px;
+      }
+
+      .replyBox {
+        width: 100%;
+        height: 50px;
+        border: none;
+        border-top: 1px solid rgb(212, 206, 206);
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .submitBtn {
+        position: absolute;
+        right: 5px;
+        bottom: 18px;
+        background-color: transparent;
+        border: none;
+        color: #84b2ee;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .mainRight {
+    width: 20%;
+    height: 65%;
+    position: fixed;
+    right: 300px;
+    top: 100px;
+
+    .userSelf {
+      width: 100%;
+      height: 20%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .userSelfPhoto {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        .UserPicture {
+          width: 100%;
+          height: auto;
+          border-radius: 50%;
+        }
+      }
+
+      .userSelfInfo {
+        margin-left: 10px;
+
+        .userSelfId {
+          font-weight: bold;
+        }
+
+        .userSelfDescription {
+          color: gray;
+          font-size: small;
+          padding: 2px;
+        }
+      }
+    }
+
+    .storyCollection {
+      width: 100%;
+      height: 50%;
+      background-color: white;
+      border: 1px solid rgb(212, 206, 206);
+      border-radius: 3px;
+
+      .storyInner {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        .groupingStories {
+          font-size: 13px;
+        }
+      }
+      .storyList {
+        width: 100%;
+        height: 83%;
+        float: left;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .storyBox {
+          display: flex;
+          align-items: center;
+          margin-left: 20px;
+
+          .storyId {
+            margin-left: 5px;
+
+            .storyUploader {
+              font-size: 13px;
+              font-weight: bold;
+            }
+
+            .whenUpload {
+              color: gray;
+              font-size: 3px;
+            }
+          }
+        }
+
+        .storyBox .story {
+          width: 50px;
+          height: 50px;
+          margin: 5px;
+          background-image: url('../../../assets/eunkyeong/noodle.jpg'),
+            linear-gradient(to right, red 0%, orange 100%);
+          overflow: hidden;
+          background-size: contain;
+        }
+      }
+    }
+
+    .recommendation {
+      width: 100%;
+      height: 38%;
+      margin-top: 30px;
+      background-color: white;
+      border: 1px solid rgb(212, 206, 206);
+      border-radius: 3px;
+
+      .recommendationInner {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        .recommendForYou {
+          font-size: 13px;
+        }
+      }
+
+      .recommendList {
+        padding: 0 15px 15px;
+
+        .friendsList {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          .story {
+            width: 38px;
+            height: 38px;
+            background-image: none;
+            margin: 0 10px 5px 0;
+            background-image: url('../../../assets/eunkyeong/food.jpg');
+            background-size: contain;
+          }
+
+          .friendName {
+            font-weight: bold;
+            font-size: 12px;
+          }
+
+          .followBtn {
+            position: absolute;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-weight: 700;
+            font-size: 13px;
+            color: #3897f0;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
