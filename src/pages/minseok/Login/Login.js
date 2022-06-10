@@ -24,29 +24,29 @@ const LoginMinseok = () => {
   );
 
   return (
-    <div className='boundaryLine'>
-      <section className='sectionWrapper'>
-        <h1 className='loginTitle'>Westagram</h1>
-        <article className='userInterface'>
+    <div className="boundaryLine">
+      <section className="sectionWrapper">
+        <h1 className="loginTitle">Westagram</h1>
+        <article className="userInterface">
           <input
             onChange={valueHandler}
-            name='userId'
-            className='userName'
-            type='text'
-            placeholder='전화번호, 사용자 이름 또는 이메일'
+            name="userId"
+            className="userName"
+            type="text"
+            placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
             onChange={valueHandler}
-            name='userPw'
-            className='userPassword'
-            type='password'
-            placeholder='비밀번호'
+            name="userPw"
+            className="userPassword"
+            type="password"
+            placeholder="비밀번호"
           />
-          <button disabled={enabled} onClick={goToMain} className='loginButton'>
+          <button disabled={enabled} onClick={goToMain} className="loginButton">
             로그인
           </button>
         </article>
-        <span className='passwordGuide'>비밀번호를 잊으셨나요?</span>
+        <span className="passwordGuide">비밀번호를 잊으셨나요?</span>
       </section>
     </div>
   );
