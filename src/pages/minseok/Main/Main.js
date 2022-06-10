@@ -6,7 +6,7 @@ const MainMinseok = () => {
     <div className='twoDividedArea'>
       <header className='topArea'>
         <nav className='logo'>
-          <img src='/images/instagram.png' alt='westagramLogo' />
+          <img src='/images/minseok/instagram.png' alt='westagramLogo' />
           <span>westagram</span>
         </nav>
         <input type='search' placeholder='🔍 검색' />
@@ -31,38 +31,38 @@ const MainMinseok = () => {
             <div className='writerProfile'>
               <img
                 className='writerProfileImage'
-                src='/images/penguin-img.png'
+                src='/images/minseok/penguin-img.png'
                 alt='프로필이미지'
               />
               <p>cannon_mj</p>
               <img
                 className='writerProfileDetails'
-                src='/images/addHost.png'
+                src='/images/minseok/addHost.png'
                 alt='더보기'
               />
             </div>
             <div className='postingImage'>
-              <img src='/images/feed-images.jpg' alt='바다사진' />
+              <img src='/images/minseok/feed-images.jpg' alt='바다사진' />
             </div>
             <i className='postingIcon'>
               <img
                 className='postingIconHeart'
-                src='/images/feedHeart.png'
+                src='/images/minseok/feedHeart.png'
                 alt='좋아요아이콘'
               />
               <img
                 className='postingIconSayballon'
-                src='/images/sayBalloon.png'
+                src='/images/minseok/sayBalloon.png'
                 alt='말풍선아이콘'
               />
               <img
                 className='postingIconShare'
-                src='/images/share.png'
+                src='/images/minseok/share.png'
                 alt='공유하기아이콘'
               />
               <img
                 className='postingIconBookmark'
-                src='/images/bookMark.png'
+                src='/images/minseok/bookMark.png'
                 alt='북마크아이콘'
               />
             </i>
@@ -86,7 +86,7 @@ const MainMinseok = () => {
             <div className='sidebarHost'>
               <img
                 className='sidebarHostImage'
-                src='/images/penguin-img.png'
+                src='/images/minseok/penguin-img.png'
                 alt='호스트이미지'
               />
               <div className='sidebarHostId'>
@@ -103,7 +103,7 @@ const MainMinseok = () => {
                 <li className='sidebarHistoryUserList'>
                   <img
                     className='sidebarHistoryUserListImage'
-                    src='/images/penguin-img.png'
+                    src='/images/minseok/penguin-img.png'
                     alt='유저이미지'
                   />
                   <div className='sidebarHistoryUserListId'>
@@ -114,7 +114,7 @@ const MainMinseok = () => {
                 <li className='sidebarHistoryUserList'>
                   <img
                     className='sidebarHistoryUserListImage'
-                    src='/images/penguin-img.png'
+                    src='/images/minseok/penguin-img.png'
                     alt='유저이미지'
                   />
                   <div className='sidebarHistoryUserListId'>
@@ -125,7 +125,7 @@ const MainMinseok = () => {
                 <li className='sidebarHistoryUserList'>
                   <img
                     className='sidebarHistoryUserListImage'
-                    src='/images/penguin-img.png'
+                    src='/images/minseok/penguin-img.png'
                     alt='유저이미지'
                   />
                   <div className='sidebarHistoryUserListId'>
@@ -136,7 +136,7 @@ const MainMinseok = () => {
                 <li className='sidebarHistoryUserList'>
                   <img
                     className='sidebarHistoryUserListImage'
-                    src='/images/penguin-img.png'
+                    src='/images/minseok/penguin-img.png'
                     alt='유저이미지'
                   />
                   <div className='sidebarHistoryUserListId'>
@@ -155,7 +155,7 @@ const MainMinseok = () => {
                 <li className='sidebarFallowUserList'>
                   <img
                     className='sidebarFallowUserListImage'
-                    src='/images/penguin-img.png'
+                    src='/images/minseok/penguin-img.png'
                     alt='유저이미지'
                   />
                   <div className='sidebarFallowUserListId'>
@@ -171,7 +171,7 @@ const MainMinseok = () => {
                 <li className='sidebarFallowUserList'>
                   <img
                     className='sidebarFallowUserListImage'
-                    src='/images/penguin-img.png'
+                    src='/images/minseok/penguin-img.png'
                     alt='유저이미지'
                   />
                   <div className='sidebarFallowUserListId'>
@@ -187,7 +187,7 @@ const MainMinseok = () => {
                 <li className='sidebarFallowUserList'>
                   <img
                     className='sidebarFallowUserListImage'
-                    src='/images/penguin-img.png'
+                    src='/images/minseok/penguin-img.png'
                     alt='유저이미지'
                   />
                   <div className='sidebarFallowUserListId'>
@@ -203,7 +203,7 @@ const MainMinseok = () => {
                 <li className='sidebarFallowUserList'>
                   <img
                     className='sidebarFallowUserListImage'
-                    src='/images/penguin-img.png'
+                    src='/images/minseok/penguin-img.png'
                     alt='유저이미지'
                   />
                   <div className='sidebarFallowUserListId'>
