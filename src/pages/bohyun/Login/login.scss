@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 500px;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 550px;
+    height: 500px;
+    border: 1px solid silver;
+
+    .logo {
+      margin: 30px;
+      font-family: 'Lobster', cursive;
+      font-size: 60px;
+
+      .loginWestagram {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  input {
+    margin: 5px;
+    height: 35px;
+    width: 400px;
+  }
+  .inputID {
+    border: 1px solid silver;
+    border-radius: 5px;
+  }
+  .inputPW {
+    border: 1px solid silver;
+    border-radius: 5px;
+  }
+
+  .loginButton {
+    align-self: center;
+    width: 405px;
+    height: 40px;
+    margin: 5px;
+    background-color: rgb(188, 186, 186);
+    opacity: 0.8;
+    border-radius: 5px;
+  }
+  .loginButtonActive {
+    align-self: center;
+    width: 405px;
+    height: 40px;
+    margin: 5px;
+    background-color: rgb(56, 167, 241);
+    opacity: 0.8;
+    border-radius: 5px;
+  }
+}
+
+.forgot {
+  margin-top: 100px;
+}
