@@ -1,17 +1,6 @@
-import React, { useState } from 'react';
 import './main.scss';
 
 const MainMinseok = () => {
-  const [asdf, setAsdf] = useState({
-    asdf: '',
-  });
-
-  const commentHandler = event => {
-    setAsdf(value => {
-      return { ...value, [value.target.name]: event.target.value };
-    });
-  };
-
   return (
     <div className="twoDividedArea">
       <header className="topArea">
@@ -78,14 +67,16 @@ const MainMinseok = () => {
             </i>
             <div className="postingComment">
               <p className="RepresentativeUser">땡땡이 좋아합니다</p>
+              <li>
+                <span>아이디</span>
+                <span>댓글</span>
+              </li>
               <p className="userComment">sss 위워크에서 진행은 베이킹 클래스</p>
               <p className="userComment">ddd 거봐 좋았잖아~~~~🥰</p>
             </div>
             {/* 댓글 다는 곳 */}
             <div className="addComment">
               <input
-                onChange={commentHandler}
-                name="asdf"
                 className="addCommentText"
                 type="text"
                 placeholder="댓글 달기..."
