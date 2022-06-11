@@ -42,30 +42,32 @@ const LoginEunkyeong = () => {
         <h1 className="titleLogo">Westagram</h1>
       </header>
       <main className="loginMain">
-        <input
-          onChange={onChangeId}
-          type="text"
-          id="id"
-          placeholder="전화번호, 사용자 이름 또는 이메일"
-          className="logInput"
-        />
-        <input
-          onChange={onChangePw}
-          type="password"
-          id="password"
-          placeholder="비밀번호"
-          className="logInput"
-        />
-        {/* <Link to="/main" className="toMain"></Link>  */}
-        <button
-          type="button"
-          className={newClass}
-          onClick={goToMain}
-          onChange={colorChange}
-          disabled={disabled}
-        >
-          로그인
-        </button>
+        <form className="form" action="">
+          <input
+            onChange={onChangeId}
+            type="text"
+            id="id"
+            placeholder="전화번호, 사용자 이름 또는 이메일"
+            className="logInput"
+          />
+          <input
+            onChange={onChangePw}
+            type="password"
+            id="password"
+            placeholder="비밀번호"
+            className="logInput"
+          />
+          {/* <Link to="/main" className="toMain"></Link>  */}
+          <button
+            type="button"
+            className={newClass}
+            onClick={goToMain}
+            onChange={colorChange}
+            disabled={disabled}
+          >
+            로그인
+          </button>
+        </form>
       </main>
       <footer>
         <a href="/" className="forgotPw">

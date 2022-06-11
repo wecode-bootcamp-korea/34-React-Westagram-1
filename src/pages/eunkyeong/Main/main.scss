@@ -123,8 +123,10 @@ body::-webkit-scrollbar {
 
 .mainPageMain {
   width: 900px;
+  height: 3000px;
   margin: 0 auto;
   padding-top: 80px;
+  padding-bottom: 10px;
 
   .feeds {
     width: 65%;

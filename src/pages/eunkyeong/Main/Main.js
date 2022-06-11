@@ -1,8 +1,19 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ReplyBoard from './ReplyBoard';
 import './main.scss';
 
 const MainEunkyeong = () => {
+  const [replyValue, setReplyValue] = useState('');
+  const [replyList, setReplyList] = useState([]);
+  const addReply = () => {
+    setReplyList([...replyList, replyValue]);
+    setReplyValue('');
+  };
+  const doNotSubmit = e => {
+    e.preventDefault();
+  };
   return (
     <>
       <nav className="mainNav">
@@ -113,17 +124,17 @@ const MainEunkyeong = () => {
             </section>
             <div className="reply">
               <ul id="replyList" />
-              <form action="">
+              <ReplyBoard replyList={replyList} setReplyList={setReplyList} />
+              <form action="" onSubmit={doNotSubmit}>
                 <input
+                  value={replyValue}
                   className="replyBox"
                   id="replySubmit"
                   type="text"
                   placeholder=" 댓글 달기..."
+                  onChange={event => setReplyValue(event.target.value)}
                 />
-                <button
-                  onclick="registerReply(); return false;"
-                  className="submitBtn"
-                >
+                <button onClick={addReply} className="submitBtn">
                   게시
                 </button>
               </form>
