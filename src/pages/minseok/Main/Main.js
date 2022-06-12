@@ -1,7 +1,26 @@
+import { useState } from 'react';
 import '../../../styles/reset.scss';
 import './main.scss';
+import CommentList from './CommentList';
 
 const MainMinseok = () => {
+  const [comment, setComment] = useState('');
+
+  const commentHandler = event => {
+    setComment(event.target.value);
+  };
+
+  const [commentArray, setCommentArray] = useState([]);
+
+  const addComment = event => {
+    event.preventDefault();
+    if (comment === '') {
+      return;
+    }
+    setCommentArray([...commentArray, comment]);
+    setComment('');
+  };
+
   return (
     <div className="twoDividedArea">
       <header className="topArea">
@@ -68,19 +87,23 @@ const MainMinseok = () => {
             </i>
             <ul className="postingComment">
               <p className="RepresentativeUser">땡땡이 좋아합니다</p>
-              <li>
-                <span>아이디</span>
-                <span>댓글</span>
-              </li>
+              {commentArray.map((comment, index) => (
+                <CommentList key={index} comment={comment} />
+              ))}
             </ul>
             {/* 댓글 다는 곳 */}
             <div className="addComment">
               <input
+                onChange={commentHandler}
                 className="addCommentText"
                 type="text"
                 placeholder="댓글 달기..."
               />
-              <button className="addCommentButton commonButton" type="submit">
+              <button
+                onClick={addComment}
+                className="addCommentButton commonButton"
+                type="submit"
+              >
                 게시
               </button>
             </div>
