@@ -1,3 +1,4 @@
+import '../../../styles/reset.scss';
 import './main.scss';
 
 const MainMinseok = () => {
@@ -65,15 +66,13 @@ const MainMinseok = () => {
                 alt="북마크아이콘"
               />
             </i>
-            <div className="postingComment">
+            <ul className="postingComment">
               <p className="RepresentativeUser">땡땡이 좋아합니다</p>
               <li>
                 <span>아이디</span>
                 <span>댓글</span>
               </li>
-              <p className="userComment">sss 위워크에서 진행은 베이킹 클래스</p>
-              <p className="userComment">ddd 거봐 좋았잖아~~~~🥰</p>
-            </div>
+            </ul>
             {/* 댓글 다는 곳 */}
             <div className="addComment">
               <input
