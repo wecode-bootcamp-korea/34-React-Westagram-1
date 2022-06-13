@@ -36,7 +36,7 @@ const LoginMinseok = () => {
     <div className="boundaryLine">
       <section className="sectionWrapper">
         <h1 className="loginTitle">Westagram</h1>
-        <article className="userInterface">
+        <form onSubmit={mainNavi} className="userInterface">
           <input
             onChange={idHandler}
             name="userId"
@@ -51,10 +51,10 @@ const LoginMinseok = () => {
             type="password"
             placeholder="비밀번호"
           />
-          <button disabled={enabled} onClick={mainNavi} className="loginButton">
+          <button disabled={enabled} className="loginButton" type="submit">
             로그인
           </button>
-        </article>
+        </form>
         <span className="passwordGuide">비밀번호를 잊으셨나요?</span>
       </section>
     </div>
