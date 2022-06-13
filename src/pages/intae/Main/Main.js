@@ -1,19 +1,24 @@
 import React from 'react';
 import './main.scss';
 import { useState } from 'react';
+import Comment from './Comment';
 
 function MainIntae(props) {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
+  const [count, setCount] = useState(0);
+  const addCount = () => {
+    setCount(current => current + 1);
+  };
   const onSubmit = e => {
     e.preventDefault();
-    console.log(comment, commentList);
     setCommentList(commnetValue => [comment, ...commnetValue]);
     setComment('');
   };
   const onChange = e => {
     setComment(e.target.value);
   };
+
   return (
     <>
       <nav>
@@ -107,15 +112,25 @@ function MainIntae(props) {
 
             <div className="reply">
               <ul id="replylist">
-                {commentList.map((value, index) => (
+                {/* {commentList.map((value, index) => (
                   <div key={index}>
                     <li style={{ fontWeight: 600 }}>
                       wendy{' '}
                       <span style={{ fontWeight: 'normal' }}>{value}</span>
                     </li>
                   </div>
+                ))} */}
+                {commentList.map((comment, index) => (
+                  <Comment
+                    id={index}
+                    key={index}
+                    value={comment}
+                    commentList={commentList}
+                    setCommentList={setCommentList}
+                  />
                 ))}
               </ul>
+
               <form action="" onSubmit={onSubmit}>
                 <input
                   value={comment}

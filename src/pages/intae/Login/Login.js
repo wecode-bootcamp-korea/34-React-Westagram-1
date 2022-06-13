@@ -8,7 +8,6 @@ function LoginIntae(props) {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [className, setClassName] = useState('login_button_before');
-  const [disabled, setDisabled] = useState(true);
   const onChangeId = e => {
     //id값이 onChangeId 함수가 끝나야만 등록된다.
     setId(e.target.value);
@@ -23,6 +22,7 @@ function LoginIntae(props) {
   };
 
   useEffect(() => {
+    console.log('dd');
     handleIdInput();
   }, [id, password]);
 
