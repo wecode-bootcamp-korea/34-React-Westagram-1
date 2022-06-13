@@ -9,6 +9,7 @@ const MainBohyun = () => {
   const addComment = e => {
     e.preventDefault();
     setCommentList([...commentList, inputValue]);
+    setInputValue('');
   };
   // useEffect(() => {
   //   commentList;
@@ -30,13 +31,23 @@ const MainBohyun = () => {
 
         <div className="navigate">
           <a href="">
-            <img src="./images/icons/explore.png" className="icons" />
+            {' '}
+            <img
+              src={require('../../../assets/bohyun/icons/explore.png')}
+              className="icons"
+            />
           </a>
           <a href="">
-            <img src="./images/icons/heart.png" className="icons" />
+            <img
+              src={require('../../../assets/bohyun/icons/heart.png')}
+              className="icons"
+            />
           </a>
           <a href="">
-            <img src="./images/icons/profile.png" className="icons" />
+            <img
+              src={require('../../../assets/bohyun/icons/profile.png')}
+              className="icons"
+            />
           </a>
         </div>
       </nav>
@@ -46,22 +57,19 @@ const MainBohyun = () => {
           <div className="article">
             <div className="user_whole">
               <img
-                src="./images/img_profile/profile_left_top.JPG"
+                src={require('../../../assets/bohyun/img_profile/profile_left_top.JPG')}
                 width="20px"
                 className="circle_maintop"
               />
-
               <div className="user_info">
                 <p>arielle</p>
               </div>
-
               <div className="dropdown">
                 <i className="fa-solid fa-ellipsis" />
               </div>
             </div>
             <img
-              src="./images/img_profile/main.jpg"
-              width="450px"
+              src={require('../../../assets/bohyun/img_profile/main.JPG')}
               className="main_img"
             />
             <div className="buttons_whole">
@@ -76,19 +84,18 @@ const MainBohyun = () => {
             </div>
             <div className="likes">
               <img
-                src="./images/img_profile/profile_left_bottom.jpeg"
+                src={require('../../../assets/bohyun/img_profile/profile_left_bottom.jpeg')}
                 className="circle_mainbottom"
               />
               <div className="like_counts">
                 <p>
-                  Liked by <strong>realisshoman</strong> and others
+                  Liked by <span className="boldID">realisshoman</span> and
+                  others
                 </p>
               </div>
             </div>
             <div className="descriptions">
-              <p>
-                <strong>arielle</strong>
-              </p>
+              <span className="boldID">arielle</span>
 
               <div className="caption">
                 <p>
@@ -102,48 +109,61 @@ const MainBohyun = () => {
             </div>
             <div className="friendComment_whole">
               <div className="friendComment_user">
-                <p>
-                  <strong>realisshoman</strong>
-                </p>
+                <span className="boldID">realisshoman</span>
                 <div className="friendComment_redHeart">
                   <p>❤️❤️</p>
                 </div>
               </div>
               <div className="friendComment_heart">
-                <img src="./images/icons/heart.png" width="13px" />
+                <img
+                  src={require('../../../assets/bohyun/icons/heart.png')}
+                  width="13px"
+                />
               </div>
             </div>
             <div className="newCommentBox" />
             {commentList.map(event => {
               // setCommentList(event.target.value);
-              return <div> {event}</div>;
+              return (
+                <div className="newCommentEntry">
+                  <div className="entry">
+                    <span className="boldID"> arielle</span>
+                    <span>{event}</span>
+                  </div>
+                  <div className="newCommentButtons">
+                    <img
+                      src={require('../../../assets/bohyun/icons/heart.png')}
+                      className="entryHeart"
+                    />
+                    <button className="deleteButton">x</button>
+                  </div>
+                </div>
+              );
             })}
-            ;{/* <CommentBoard commentList={commentList} /> */}
-            <div className="commentsWrapper">
-              <form onSubmit={addComment}>
-                <div className="comments_box">
-                  <input
-                    value={inputValue}
-                    type="text"
-                    placeholder="comment"
-                    className="comments-box"
-                    onChange={event => setInputValue(event.target.value)}
-                  />
-                </div>
-                <div className="comments_button">
-                  <button id="postButton" onClick={addComment}>
-                    post
-                  </button>
-                </div>
-              </form>
-            </div>
+            {/* <CommentBoard commentList={commentList} /> */}
+            <form onSubmit={addComment} className="commentsWrapper">
+              <div className="comments_box">
+                <input
+                  value={inputValue}
+                  type="text"
+                  placeholder="comment"
+                  className="comments-box"
+                  onChange={event => setInputValue(event.target.value)}
+                />
+              </div>
+              <div className="comments_button">
+                <button id="postButton" onClick={addComment}>
+                  post
+                </button>
+              </div>
+            </form>
           </div>
         </div>
 
         <div className="main_right">
           <div className="right_profile">
             <img
-              src="./images/img_profile/beenzino.png"
+              src={require('../../../assets/bohyun/img_profile/beenzino.JPG')}
               className="right_profile_pic"
             />
 
@@ -151,7 +171,7 @@ const MainBohyun = () => {
               <p>
                 <strong>realisshoman</strong>
               </p>
-              <p id="greyText">임성빈</p>
+              <p id="greyText">Been</p>
             </div>
           </div>
 
@@ -167,7 +187,7 @@ const MainBohyun = () => {
               <div className="right_stories_entry">
                 <div className="right_stories_img type1">
                   <img
-                    src="./images/img_stories/story1.JPG"
+                    src={require('../../../assets/bohyun/img_stories/story1.jpeg')}
                     className="round_img"
                   />
                 </div>
@@ -181,7 +201,7 @@ const MainBohyun = () => {
               <div className="right_stories_entry">
                 <div className="right_stories_img type2">
                   <img
-                    src="./images/img_stories/story2.jpeg"
+                    src={require('../../../assets/bohyun/img_stories/story2.jpeg')}
                     className="round_img"
                   />
                 </div>
@@ -195,7 +215,7 @@ const MainBohyun = () => {
               <div className="right_stories_entry">
                 <div className="right_stories_img type3">
                   <img
-                    src="./images/img_stories/story3.jpeg"
+                    src={require('../../../assets/bohyun/img_stories/story3.JPG')}
                     className="round_img"
                   />
                 </div>
@@ -209,7 +229,7 @@ const MainBohyun = () => {
               <div className="right_stories_entry">
                 <div className="right_stories_img type4">
                   <img
-                    src="./images/img_stories/story4.JPG"
+                    src={require('../../../assets/bohyun/img_stories/story4.jpeg')}
                     className="round_img"
                   />
                 </div>
@@ -234,7 +254,7 @@ const MainBohyun = () => {
             <div className="right_recommendations_single">
               <div className="right_recommendations_left">
                 <img
-                  src="./images/img_recommendations/rec1.JPG"
+                  src={require('../../../assets/bohyun/img_recommendations/rec1.JPG')}
                   className="round_img"
                 />
                 <div className="right_recommendations_text">
@@ -248,7 +268,7 @@ const MainBohyun = () => {
             <div className="right_recommendations_single">
               <div className="right_recommendations_left">
                 <img
-                  src="./images/img_recommendations/rec2.JPG"
+                  src={require('../../../assets/bohyun/img_recommendations/rec2.JPG')}
                   className="round_img"
                 />
                 <div className="right_recommendations_text">
@@ -262,7 +282,7 @@ const MainBohyun = () => {
             <div className="right_recommendations_single">
               <div className="right_recommendations_left">
                 <img
-                  src="./images/img_recommendations/rec3.jpeg"
+                  src={require('../../../assets/bohyun/img_recommendations/rec3.jpeg')}
                   className="round_img"
                 />
                 <div className="right_recommendations_text">
