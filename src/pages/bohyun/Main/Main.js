@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './main.scss';
-import Comments from './Comments';
+import CommentBoard from '../../../components/CommentBoard';
 
 const MainBohyun = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [commentList, setCommentList] = useState([]);
+
+  const addComment = e => {
+    e.preventDefault();
+    setCommentList([...commentList, inputValue]);
+  };
+  // useEffect(() => {
+  //   commentList;
+  // }, [commentList]);
+
   return (
     <div className="main">
       <nav className="menu">
         <div className="logo-box">
-          <i class="fa-brands fa-instagram"></i>
+          <i className="fa-brands fa-instagram" />
           <span className="westagram">Westagram</span>
         </div>
 
-        <div className="vertical"></div>
+        <div className="vertical" />
 
         <div className="search">
           <input type="search" placeholder="search" />
@@ -45,27 +56,24 @@ const MainBohyun = () => {
               </div>
 
               <div className="dropdown">
-                <i className="fa-solid fa-ellipsis"></i>
+                <i className="fa-solid fa-ellipsis" />
               </div>
             </div>
-
             <img
               src="./images/img_profile/main.jpg"
               width="450px"
               className="main_img"
             />
-
             <div className="buttons_whole">
               <div className="buttons_left">
-                <i className="fa-solid fa-heart"></i>
-                <i className="fa-solid fa-comment"></i>
-                <i className="fa-solid fa-paper-plane"></i>
+                <i className="fa-solid fa-heart" />
+                <i className="fa-solid fa-comment" />
+                <i className="fa-solid fa-paper-plane" />
               </div>
               <div className="buttons_right">
-                <i className="fa-solid fa-bookmark"></i>
+                <i className="fa-solid fa-bookmark" />
               </div>
             </div>
-
             <div className="likes">
               <img
                 src="./images/img_profile/profile_left_bottom.jpeg"
@@ -77,7 +85,6 @@ const MainBohyun = () => {
                 </p>
               </div>
             </div>
-
             <div className="descriptions">
               <p>
                 <strong>arielle</strong>
@@ -93,7 +100,6 @@ const MainBohyun = () => {
                 </p>
               </div>
             </div>
-
             <div className="friendComment_whole">
               <div className="friendComment_user">
                 <p>
@@ -107,18 +113,29 @@ const MainBohyun = () => {
                 <img src="./images/icons/heart.png" width="13px" />
               </div>
             </div>
-
-            <div className="newCommentBox"></div>
-
-            <div className="comments_whole">
-              <div className="comments_box">
-                <input type="text" placeholder="comment" id="comments-box" />
-              </div>
-              <div className="comments_button">
-                <button type="button" id="postButton">
-                  post
-                </button>
-              </div>
+            <div className="newCommentBox" />
+            {commentList.map(event => {
+              // setCommentList(event.target.value);
+              return <div> {event}</div>;
+            })}
+            ;{/* <CommentBoard commentList={commentList} /> */}
+            <div className="commentsWrapper">
+              <form onSubmit={addComment}>
+                <div className="comments_box">
+                  <input
+                    value={inputValue}
+                    type="text"
+                    placeholder="comment"
+                    className="comments-box"
+                    onChange={event => setInputValue(event.target.value)}
+                  />
+                </div>
+                <div className="comments_button">
+                  <button id="postButton" onClick={addComment}>
+                    post
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
