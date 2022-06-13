@@ -3,12 +3,11 @@ import CommentList from './CommentList';
 
 const Feed = () => {
   const [comment, setComment] = useState('');
+  const [commentArray, setCommentArray] = useState([]);
 
   const commentHandler = event => {
     setComment(event.target.value);
   };
-
-  const [commentArray, setCommentArray] = useState([]);
 
   const addComment = event => {
     event.preventDefault();

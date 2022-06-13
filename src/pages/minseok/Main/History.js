@@ -1,4 +1,10 @@
 const History = () => {
+  const userNames = [
+    { id: 1, text: '김토끼' },
+    { id: 2, text: '김원숭' },
+    { id: 3, text: '김거북' },
+    { id: 4, text: '김기린' },
+  ];
   return (
     <div className="sidebarHistory">
       <div className="sidebarHistoryTitle">
@@ -6,10 +12,9 @@ const History = () => {
         <button className="commonButton">모두 보기</button>
       </div>
       <ul className="sidebarHistoryUser">
-        {/* map함수 앞에 하드코딩한거 나중에 수정하기 */}
-        {[1, 2, 3, 4].map(() => {
+        {userNames.map(name => {
           return (
-            <li key={1} className="sidebarHistoryUserList">
+            <li key={name.id} className="sidebarHistoryUserList">
               <img
                 className="sidebarHistoryUserListImage"
                 src="/images/minseok/penguin-img.png"
