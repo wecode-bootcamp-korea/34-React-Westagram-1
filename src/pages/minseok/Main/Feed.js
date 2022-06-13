@@ -62,7 +62,7 @@ const Feed = () => {
       <ul className="postingComment">
         <p className="RepresentativeUser">땡땡이 좋아합니다</p>
         {commentArray.map((comment, index) => (
-          <CommentList key={`10${index}`} comment={comment} />
+          <CommentList key={index} comment={comment} />
         ))}
       </ul>
       {/* 댓글 다는 곳 */}
