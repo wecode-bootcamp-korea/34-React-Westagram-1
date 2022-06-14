@@ -1,5 +1,3 @@
-import React from 'react';
-import './login.scss';
 import './login.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -17,14 +15,16 @@ const LoginMinseok = () => {
   });
 
   const idHandler = event => {
-    setUserInfo(value => {
-      return { ...value, [event.target.name]: event.target.value };
+    const { name, value } = event.target;
+    setUserInfo(prev => {
+      return { ...prev, [name]: value };
     });
   };
 
   const pwHandler = event => {
-    setUserInfo(value => {
-      return { ...value, [event.target.name]: event.target.value.length };
+    const { name, value } = event.target;
+    setUserInfo(prev => {
+      return { ...prev, [name]: value.length };
     });
   };
 
