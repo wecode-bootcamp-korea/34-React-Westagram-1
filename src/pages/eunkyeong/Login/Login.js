@@ -14,10 +14,13 @@ const LoginEunkyeong = () => {
   const [disabled, setDisabled] = useState(true);
 
   const onChangeId = e => {
-    setInputId(e.target.value);
+    const { value } = e.target;
+    setInputId(value);
+    //비구조화할당하는 이유 e.target, 가독성, 내가 접근하고 싶은 key만가져올수잇음. 나중에는 e.target.value.key[1].value 막 이런식으로 길어지는데 그걸 변수에 넣어두면 가독성도 높아진다.
   };
   const onChangePw = e => {
-    setInputPw(e.target.value);
+    const { value } = e.target;
+    setInputPw(value);
   };
 
   const colorChange = () => {
@@ -37,7 +40,7 @@ const LoginEunkyeong = () => {
   }, [inputId, inputPw]);
 
   return (
-    <div className="loginContainer">
+    <div className="LoginEunkyeong">
       <header>
         <h1 className="titleLogo">Westagram</h1>
       </header>

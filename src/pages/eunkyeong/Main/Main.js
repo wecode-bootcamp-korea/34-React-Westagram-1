@@ -16,7 +16,7 @@ const MainEunkyeong = () => {
   };
   return (
     <>
-      <nav className="mainNav">
+      <nav className="MainEunkyeong">
         <div className="goHome">
           <Link to="/main" className="homeAnchor">
             <div className="logoBox">
@@ -241,5 +241,23 @@ const MainEunkyeong = () => {
     </>
   );
 };
+
+// const STORY_LIST = [
+//   { id: 1, user: '사용자1', past: '1분 전' },
+//   { id: 2, user: '사용자2', past: '2분 전' },
+//   { id: 3, user: '사용자3', past: '3분 전' },
+//   { id: 4, user: '사용자4', past: '4분 전' },
+// ];
+// return STORY_LIST.map(story => {
+//   return (
+//     <div className="storyBox" key={story.id}>
+//       <div className="story11 story" />
+//       <div className="storyId">
+//         <p className="storyUploader">{story.user}</p>
+//         <span className="whenUpload">{story.past}</span>
+//       </div>
+//     </div>
+//   );
+// });
 
 export default MainEunkyeong;

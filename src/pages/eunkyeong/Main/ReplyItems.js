@@ -12,21 +12,20 @@ const ReplyItems = props => {
     }
   };
 
+  const deleteReply = () => {
+    let copy = [...props.replyList];
+    copy.splice(props.index, 1);
+    props.setReplyList(copy);
+  };
+
   return (
-    <div className="user">
-      vvjoahvv <span className="reply-item">{props.item}</span>
-      <button
-        className="deleteReply"
-        onClick={() => {
-          let copy = [...props.replyList];
-          copy.splice(props.index, 1);
-          props.setReplyList(copy);
-        }}
-      />
+    <li className="user">
+      vvjoahvv <span className="replyItem">{props.item}</span>
+      <button className="deleteReply" onClick={deleteReply} />
       <button className="heartLove" onClick={changeLove}>
         <i className={icon} />
       </button>
-    </div>
+    </li>
   );
 };
 
