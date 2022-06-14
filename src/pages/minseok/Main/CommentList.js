@@ -1,9 +1,14 @@
-const CommentList = ({ comment, index }) => {
+const CommentList = ({ comment, setCommentData, commentDataId }) => {
+  const removeComment = () =>
+    setCommentData(prev => prev.filter(el => el.userId !== commentDataId));
+
   return (
-    <li key={index} className="postingCommentList">
+    <li className="postingCommentList">
       <span className="userCommentId">김펭귄</span>
       <span className="userComment">{comment}</span>
-      <button className="userCommentRemove">삭제</button>
+      <button onClick={removeComment} className="userCommentRemove">
+        삭제
+      </button>
     </li>
   );
 };

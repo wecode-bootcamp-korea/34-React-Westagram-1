@@ -2,20 +2,26 @@ import { useState } from 'react';
 import CommentList from './CommentList';
 
 const Feed = () => {
-  const [comment, setComment] = useState('');
-  const [commentArray, setCommentArray] = useState([]);
+  const [inputText, setInputText] = useState('');
+  const [commentData, setCommentData] = useState([]);
+  const [nextId, setNextId] = useState(1);
 
   const commentHandler = event => {
-    setComment(event.target.value);
+    setInputText(event.target.value);
   };
 
   const addComment = event => {
     event.preventDefault();
-    if (comment === '') {
+    if (inputText === '') {
       return;
     }
-    setCommentArray([...commentArray, comment]);
-    setComment('');
+    const nextComment = commentData.concat({
+      userId: nextId,
+      userComment: inputText,
+    });
+    setNextId(nextId + 1);
+    setCommentData(nextComment);
+    setInputText('');
   };
 
   return (
@@ -60,14 +66,20 @@ const Feed = () => {
       </i>
       <ul className="postingComment">
         <p className="RepresentativeUser">땡땡이 좋아합니다</p>
-        {commentArray.map((comment, index) => (
-          <CommentList key={index} comment={comment} />
+        {commentData.map(name => (
+          <CommentList
+            commentDataId={name.userId}
+            commentData={commentData}
+            setCommentData={setCommentData}
+            key={name.userId}
+            comment={name.userComment}
+          />
         ))}
       </ul>
       {/* 댓글 다는 곳 */}
       <form className="addComment" onSubmit={addComment}>
         <input
-          value={comment}
+          value={inputText}
           onChange={commentHandler}
           className="addCommentText"
           type="text"
