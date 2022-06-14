@@ -1,21 +1,19 @@
 /* common.scss */
-@import "../bomi/variables.scss";
-
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 700;
-    color:  #0095f6;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0095f6;
 }
 
 .logo {
-    font-family: 'Lobster', cursive;
-    font-size: 45px;
-    font-weight: 500px;
+  font-family: 'Lobster', cursive;
+  font-size: 45px;
+  font-weight: 500px;
 }
