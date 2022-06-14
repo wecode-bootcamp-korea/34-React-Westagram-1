@@ -1,4 +1,4 @@
-import '../../../styles/reset.scss';
+import '../../../styles/reset.scss'; // 이거 확인해보고 삭제
 import './main.scss';
 import Header from './Header';
 import Feed from './Feed';
