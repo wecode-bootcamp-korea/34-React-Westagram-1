@@ -1,11 +1,4 @@
 const Fallow = () => {
-  const userNames = [
-    { id: 1, text: '김토끼' },
-    { id: 2, text: '김원숭' },
-    { id: 3, text: '김거북' },
-    { id: 4, text: '김기린' },
-  ];
-
   return (
     <div className="sidebarFallow">
       <div className="sidebarFallowTitle">
@@ -13,7 +6,7 @@ const Fallow = () => {
         <button className="commonButton">모두 보기</button>
       </div>
       <ul className="sidebarFallowUser">
-        {userNames.map(name => {
+        {USER_NAMES.map(name => {
           return (
             <li key={name.id} className="sidebarFallowUserList">
               <img
@@ -37,5 +30,12 @@ const Fallow = () => {
     </div>
   );
 };
+
+const USER_NAMES = [
+  { id: 1, text: '김토끼' },
+  { id: 2, text: '김원숭' },
+  { id: 3, text: '김거북' },
+  { id: 4, text: '김기린' },
+];
 
 export default Fallow;

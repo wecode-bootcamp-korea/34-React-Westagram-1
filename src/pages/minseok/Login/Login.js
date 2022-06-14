@@ -1,6 +1,6 @@
-import './login.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import './login.scss';
 
 const LoginMinseok = () => {
   const navigate = useNavigate();

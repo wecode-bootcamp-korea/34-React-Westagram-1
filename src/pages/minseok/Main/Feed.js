@@ -7,7 +7,8 @@ const Feed = () => {
   const [nextId, setNextId] = useState(1);
 
   const commentHandler = event => {
-    setInputText(event.target.value);
+    const { value } = event.target;
+    setInputText(value);
   };
 
   const addComment = event => {
@@ -69,7 +70,6 @@ const Feed = () => {
         {commentData.map(name => (
           <CommentList
             commentDataId={name.userId}
-            commentData={commentData}
             setCommentData={setCommentData}
             key={name.userId}
             comment={name.userComment}
