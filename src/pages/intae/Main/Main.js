@@ -1,15 +1,11 @@
 import React from 'react';
-import './main.scss';
 import { useState } from 'react';
 import Comment from './Comment';
-
-function MainIntae(props) {
+import './main.scss';
+function MainIntae() {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
-  const [count, setCount] = useState(0);
-  const addCount = () => {
-    setCount(current => current + 1);
-  };
+
   const onSubmit = e => {
     e.preventDefault();
     setCommentList(commnetValue => [comment, ...commnetValue]);
@@ -112,14 +108,6 @@ function MainIntae(props) {
 
             <div className="reply">
               <ul id="replylist">
-                {/* {commentList.map((value, index) => (
-                  <div key={index}>
-                    <li style={{ fontWeight: 600 }}>
-                      wendy{' '}
-                      <span style={{ fontWeight: 'normal' }}>{value}</span>
-                    </li>
-                  </div>
-                ))} */}
                 {commentList.map((comment, index) => (
                   <Comment
                     id={index}

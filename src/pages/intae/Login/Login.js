@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
-import './login.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import './login.scss';
 
 function LoginIntae(props) {
   const [id, setId] = useState('');
@@ -15,23 +15,19 @@ function LoginIntae(props) {
   const onChangePassword = e => {
     setPassword(e.target.value);
   };
-  const handleIdInput = () => {
-    id.includes('@') && password.length >= 5
-      ? setClassName('login_button_after')
-      : setClassName('login_button_before');
+  const navigate = useNavigate();
+  const onClickLogin = () => {
+    navigate('/main-intae');
   };
-
-  useEffect(() => {
-    console.log('dd');
-    handleIdInput();
-  }, [id, password]);
+  const infoValid = id.includes('@') && password.length >= 5;
+  useEffect(() => {}, [id, password]);
 
   return (
     <>
       <div className="container">
         <div className="login_container">
           <div className="login_logo">Westagram</div>
-          <div className="login_account">
+          <form className="login_account">
             <input
               onChange={onChangeId}
               value={id}
@@ -45,18 +41,17 @@ function LoginIntae(props) {
               className="account_pw"
               placeholder="비밀번호"
             />
-          </div>
-          <div className="login_button">
-            <Link
-              className={className}
-              to="/Main"
-              as="button"
-              onClick={handleIdInput}
-              disabled
+            <button
+              className={
+                infoValid ? 'login_button_after' : 'login_button_before'
+              }
+              onClick={onClickLogin}
+              disabled={className.includes('before') ? true : false}
             >
               로그인
-            </Link>
-          </div>
+            </button>
+          </form>
+
           <div className="forgot_pw">
             <a href="/">비밀번호를 잊으셨나요?</a>
           </div>
