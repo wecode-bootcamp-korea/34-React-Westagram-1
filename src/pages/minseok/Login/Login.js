@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../styles/reset.scss';
+import './login.scss';
 import './login.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
