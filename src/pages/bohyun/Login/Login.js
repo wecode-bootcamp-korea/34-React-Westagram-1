@@ -10,11 +10,13 @@ const LoginBohyun = () => {
   const [newClass, setNewClass] = useState('loginButton');
 
   const onChangeID = event => {
-    setID(event.target.value);
+    const { value } = event.target;
+    setID(value);
   };
 
   const onChangePw = event => {
-    setPW(event.target.value);
+    const { value } = event.target;
+    setPW(value);
   };
   const checkInfo = () => {
     id.includes('@') && pw.length > 0
@@ -31,7 +33,7 @@ const LoginBohyun = () => {
       <div className="wrapper">
         <div className="header">
           <div className="logo">
-            <Link to="/main" className="loginWestagram">
+            <Link to="/main-bohyun" className="loginWestagram">
               Westagram
             </Link>
           </div>
@@ -39,24 +41,21 @@ const LoginBohyun = () => {
           <div className="form">
             <div className="id">
               <input
-                // onChange={(event) => setID(event.target.value)}
                 type="text"
                 placeholder="Phone number, username, or email"
                 className="inputID"
                 onChange={onChangeID}
               />
-              <h1>{id}</h1>
             </div>
             <div className="pw">
               <input
-                // onChange={(event) => setPW(event.target.value)}
                 onChange={onChangePw}
                 type="password"
                 placeholder="Password"
                 className="inputPW"
               />
             </div>
-            <p>{pw}</p>
+
             <button type="button" onClick={checkInfo} className={newClass}>
               Log In
             </button>
@@ -70,7 +69,7 @@ const LoginBohyun = () => {
         </div>
       </div>
 
-      <div className="footer"></div>
+      <div className="footer" />
     </div>
   );
 };
