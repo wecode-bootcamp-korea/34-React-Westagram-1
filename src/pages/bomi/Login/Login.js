@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Login.scss";
-import "../../styles/common.scss";
-import { Link, useNavigate } from "react-router-dom"
+import "../../bomi/common.scss"
+import {useNavigate } from "react-router-dom"
 
 const Login = () => {
 
@@ -48,7 +48,7 @@ const Login = () => {
                     <div className="facebook">
                         <button>
                             <a target="_blank" href="https://www.facebook.com" rel="noreferrer" >
-                                <img className="facebookimg" src="../../assets/facebook-icon.png"/>
+                                <img className="facebookimg" src= {require ("../../../../public/images/bomi/facebook-icon.png")}/>
                                 <span style={{ fontSize: 13, fontWeight: 600, color: "#385085" }}>Facebook으로 로그인</span>
                             </a>
                         </button>
