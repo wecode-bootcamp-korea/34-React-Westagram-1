@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "userName": "Mom",
+    "content": "You look great! I love you <3",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "userName": "Jay",
+    "content": "You cute baby girl!",
+    "isLiked": true
+  },
+  {
+    "id": 3,
+    "userName": "Beenzino",
+    "content": "ily",
+    "isLiked": true
+  }
+]

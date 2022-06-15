@@ -4,7 +4,6 @@ import CommentItem from './CommentItem';
 const CommentBoard = ({ commentList }) => {
   return (
     <div>
-      <h1>Hey you</h1>
       <CommentItem />
       {commentList.map(comment => {
         // return <CommentItem comment={comment} />;

@@ -159,8 +159,8 @@
           display: flex;
           justify-content: space-between;
           position: center;
-          font-family: sans-serif;
-          font-size: 13px;
+          width: 433px;
+          height: 20px;
           .entry .boldID {
             margin: 5px;
           }
@@ -168,39 +168,43 @@
             width: 13px;
             margin: 5px;
           }
+          .deleteButton {
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            border-style: none;
+          }
         }
       }
     }
   }
 }
 
-.deleteButton {
-  margin: 5px;
-  width: 25px;
-}
 .commentsWrapper {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   width: 445px;
+
+  .comments_box {
+    margin: 0px 15px 5px 5px;
+    width: 80%;
+    align-self: center;
+  }
+  .comments-box {
+    border: 1px solid white;
+    width: 350px;
+    height: 22px;
+    &:focus {
+      outline: none;
+    }
+  }
 }
+//here
 .newCommentUser {
   font-family: sans-serif;
   font-size: 13px;
   font-weight: 30px;
-}
-.comments_box {
-  margin: 0px 15px 5px 5px;
-  width: 80%;
-  align-self: center;
-}
-.comments-box {
-  border: 1px solid white;
-  width: 350px;
-  height: 22px;
-  &:focus {
-    outline: none;
-  }
 }
 
 .comments_button {

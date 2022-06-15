@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './main.scss';
 import CommentBoard from '../../../components/CommentBoard';
+import CommentBox from '../../../components/CommentBox';
+import './main.scss';
 
 const MainBohyun = () => {
   const [inputValue, setInputValue] = useState('');
   const [commentList, setCommentList] = useState([]);
-
   const addComment = e => {
     e.preventDefault();
     setCommentList([...commentList, inputValue]);
@@ -14,6 +14,17 @@ const MainBohyun = () => {
   // useEffect(() => {
   //   commentList;
   // }, [commentList]);
+  const [heart, setHeart] = useState(
+    require('../../../assets/bohyun/icons/heart.png')
+  );
+
+  const changeHeart = () => {
+    if (heart === require('../../../assets/bohyun/icons/heart.png')) {
+      setHeart(require('../../../assets/bohyun/icons/redHeart.jpeg'));
+    } else {
+      setHeart(require('../../../assets/bohyun/icons/heart.png'));
+    }
+  };
 
   return (
     <div className="main">
@@ -121,26 +132,38 @@ const MainBohyun = () => {
                 />
               </div>
             </div>
-            <div className="newCommentBox" />
-            {commentList.map(event => {
-              // setCommentList(event.target.value);
-              return (
-                <div className="newCommentEntry">
-                  <div className="entry">
-                    <span className="boldID"> arielle</span>
-                    <span>{event}</span>
+            <CommentBox />
+            <div className="newCommentBox">
+              {commentList.map((event, index) => {
+                // setCommentList(event.target.value);
+                return (
+                  <div className="newCommentEntry" key={index}>
+                    <div className="entry">
+                      <span className="boldID"> arielle</span>
+                      <span>{event}</span>
+                    </div>
+                    <div className="newCommentButtons">
+                      <img
+                        onClick={changeHeart}
+                        src={heart}
+                        className="entryHeart"
+                      />
+                      <button
+                        className="deleteButton"
+                        onClick={() => {
+                          let copy = [...commentList];
+                          copy.splice(index, 1);
+                          setCommentList(copy);
+                        }}
+                      >
+                        x
+                      </button>
+                    </div>
                   </div>
-                  <div className="newCommentButtons">
-                    <img
-                      src={require('../../../assets/bohyun/icons/heart.png')}
-                      className="entryHeart"
-                    />
-                    <button className="deleteButton">x</button>
-                  </div>
-                </div>
-              );
-            })}
-            {/* <CommentBoard commentList={commentList} /> */}
+                );
+              })}
+            </div>
+
             <form onSubmit={addComment} className="commentsWrapper">
               <div className="comments_box">
                 <input
@@ -152,9 +175,7 @@ const MainBohyun = () => {
                 />
               </div>
               <div className="comments_button">
-                <button id="postButton" onClick={addComment}>
-                  post
-                </button>
+                <button id="postButton">post</button>
               </div>
             </form>
           </div>
@@ -168,9 +189,7 @@ const MainBohyun = () => {
             />
 
             <div className="right_profile_text">
-              <p>
-                <strong>realisshoman</strong>
-              </p>
+              <p>realisshoman</p>
               <p id="greyText">Been</p>
             </div>
           </div>
