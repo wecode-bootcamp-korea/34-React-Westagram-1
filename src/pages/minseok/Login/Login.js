@@ -3,16 +3,40 @@ import { useState } from 'react';
 import './login.scss';
 
 const LoginMinseok = () => {
-  const navigate = useNavigate();
-
-  const mainNavi = () => {
-    !enabled ? navigate('/main-minseok') : alert('아무것도 입력되지 않았어요');
-  };
-
   const [userInfo, setUserInfo] = useState({
     userId: '',
     userPw: '',
   });
+
+  let enabled = !Boolean(
+    userInfo.userId &&
+      userInfo.userId.includes('@') &&
+      userInfo.userPw.length >= 5
+  );
+
+  // 백앤드와 통신하지 않을 때
+  // const mainNavi = () => {
+  //   !enabled ? navigate('/main-minseok') : alert('아무것도 입력되지 않았어요');
+  // };
+
+  const navigate = useNavigate();
+
+  const mainNavi = event => {
+    event.preventDefault();
+    !enabled
+      ? fetch('http://10.58.0.63:8000/users/login', {
+          method: 'POST',
+          body: JSON.stringify({
+            email: userInfo.userId,
+            password: userInfo.userPw,
+          }),
+        })
+          .then(response => response.json())
+          .then(() => {
+            navigate('/main-minseok');
+          })
+      : alert('아무것도 입력되지 않았어요');
+  };
 
   const idHandler = event => {
     const { name, value } = event.target;
@@ -24,13 +48,9 @@ const LoginMinseok = () => {
   const pwHandler = event => {
     const { name, value } = event.target;
     setUserInfo(prev => {
-      return { ...prev, [name]: value.length };
+      return { ...prev, [name]: value };
     });
   };
-
-  let enabled = !Boolean(
-    userInfo.userId && userInfo.userId.includes('@') && userInfo.userPw >= 5
-  );
 
   return (
     <div className="boundaryLine">
