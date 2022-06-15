@@ -20,7 +20,7 @@ const ReplyItems = props => {
 
   return (
     <li className="user">
-      vvjoahvv <span className="replyItem">{props.item}</span>
+      UserId <span className="replyItem">{props.item}</span>
       <button className="deleteReply" onClick={deleteReply} />
       <button className="heartLove" onClick={changeLove}>
         <i className={icon} />

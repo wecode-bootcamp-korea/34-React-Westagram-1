@@ -60,12 +60,15 @@ const MainEunkyeong = () => {
       <main className="mainPageMain">
         <div className="feeds">
           <article className="stories">
-            <div className="story1 story" />
+            {story.map(el => {
+              return <div className={el.story} key={el.id} />;
+            })}
+            {/* <div className="story1 story" />
             <div className="story2 story" />
             <div className="story3 story" />
             <div className="story4 story" />
             <div className="story5 story" />
-            <div className="story6 story" />
+            <div className="story6 story" /> */}
           </article>
           <article className="article1">
             <div className="userProfile">
@@ -162,7 +165,18 @@ const MainEunkyeong = () => {
               <button className="loadallBtn">모두 보기</button>
             </div>
             <div className="storyList">
-              <div className="storyBox">
+              {storyList.map(story => {
+                return (
+                  <div className="storyBox" key={story.id}>
+                    <div className="story11 story" />
+                    <div className="storyId">
+                      <p className="storyUploader">{story.user}</p>
+                      <span className="whenUpload">{story.past}</span>
+                    </div>
+                  </div>
+                );
+              })}
+              {/* <div className="storyBox">
                 <div className="story11 story" />
                 <div className="storyId">
                   <p className="storyUploader">사용자1</p>
@@ -210,7 +224,7 @@ const MainEunkyeong = () => {
                   <p className="storyUploader">사용자7</p>
                   <span className="whenUpload">5시간 전</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="recommendation">
@@ -219,21 +233,15 @@ const MainEunkyeong = () => {
               <button className="loadallBtn">모두 보기</button>
             </div>
             <section className="recommendList">
-              <div className="friendsList">
-                <div className="friend1 story" />
-                <p className="friendName">pizzamania123</p>
-                <button className="followBtn">팔로우</button>
-              </div>
-              <div className="friendsList">
-                <div className="friend2 story" />
-                <p className="friendName">bibimbab77</p>
-                <button className="followBtn">팔로우</button>
-              </div>
-              <div className="friendsList">
-                <div className="friend2 story" />
-                <p className="friendName">gucksumari42</p>
-                <button className="followBtn">팔로우</button>
-              </div>
+              {recommendationList.map(friend => {
+                return (
+                  <div className="friendsList" key={friend.id}>
+                    <div className="friend1 story" />
+                    <p className="friendName">{friend.name}</p>
+                    <button className="followBtn">팔로우</button>
+                  </div>
+                );
+              })}
             </section>
           </div>
         </div>
@@ -242,22 +250,28 @@ const MainEunkyeong = () => {
   );
 };
 
-// const STORY_LIST = [
-//   { id: 1, user: '사용자1', past: '1분 전' },
-//   { id: 2, user: '사용자2', past: '2분 전' },
-//   { id: 3, user: '사용자3', past: '3분 전' },
-//   { id: 4, user: '사용자4', past: '4분 전' },
-// ];
-// return STORY_LIST.map(story => {
-//   return (
-//     <div className="storyBox" key={story.id}>
-//       <div className="story11 story" />
-//       <div className="storyId">
-//         <p className="storyUploader">{story.user}</p>
-//         <span className="whenUpload">{story.past}</span>
-//       </div>
-//     </div>
-//   );
-// });
+const storyList = [
+  { id: 1, user: '사용자1', past: '1분 전' },
+  { id: 2, user: '사용자2', past: '2분 전' },
+  { id: 3, user: '사용자3', past: '3분 전' },
+  { id: 4, user: '사용자4', past: '4분 전' },
+  { id: 5, user: '사용자5', past: '5분 전' },
+  { id: 6, user: '사용자6', past: '6분 전' },
+  { id: 7, user: '사용자7', past: '7분 전' },
+  { id: 8, user: '사용자8', past: '8분 전' },
+];
+const story = [
+  { id: 1, story: 'story1 story' },
+  { id: 2, story: 'story2 story' },
+  { id: 3, story: 'story3 story' },
+  { id: 4, story: 'story4 story' },
+  { id: 5, story: 'story5 story' },
+  { id: 6, story: 'story6 story' },
+];
+const recommendationList = [
+  { id: 1, name: 'pizzamania123' },
+  { id: 2, name: 'bibimbab77' },
+  { id: 3, name: 'gucksumari42' },
+];
 
 export default MainEunkyeong;

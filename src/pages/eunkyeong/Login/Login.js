@@ -1,11 +1,35 @@
+import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { Link } from "react-router-dom";
 import './login.scss';
 
 const LoginEunkyeong = () => {
+  const newId = 'kaka12345@naver.com';
+  const startPW = 'KaK12345!';
+  const firstName = 'Kim';
+  const lastName = 'EK';
+  const phone_number = '010-2222-2222';
+
   const navigate = useNavigate();
   const goToMain = () => {
+    fetch('http://10.58.6.230:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
+        phone_number: phone_number,
+        email: newId,
+        password: startPW,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.access_token) {
+          localStorage.setItem('accessToken', result.access_token);
+        } else {
+          alert('아이디와 비밀번호를 다시 확인하세요');
+        }
+      });
     navigate('/main-eunkyeong');
   };
   const [inputId, setInputId] = useState('');
@@ -80,5 +104,4 @@ const LoginEunkyeong = () => {
     </div>
   );
 };
-
 export default LoginEunkyeong;
