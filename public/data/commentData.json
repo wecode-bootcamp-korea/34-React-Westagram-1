@@ -1,14 +1,14 @@
 [
   {
-    "id": 1,
-    "comment": "Welcome to world best coding bootcamp!"
+    "userId": 1,
+    "userComment": "Welcome to world best coding bootcamp!"
   },
   {
-    "id": 2,
-    "comment": "Hi there."
+    "userId": 2,
+    "userComment": "Hi there."
   },
   {
-    "id": 3,
-    "comment": "Hey."
+    "userId": 3,
+    "userComment": "Hey."
   }
 ]

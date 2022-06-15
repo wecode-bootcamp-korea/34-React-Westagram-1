@@ -14,38 +14,13 @@ const LoginMinseok = () => {
       userInfo.userPw.length >= 5
   );
 
-  // 백앤드와 통신하지 않을 때
-  // const mainNavi = () => {
-  //   !enabled ? navigate('/main-minseok') : alert('아무것도 입력되지 않았어요');
-  // };
+  const mainNavi = () => {
+    !enabled ? navigate('/main-minseok') : alert('아무것도 입력되지 않았어요');
+  };
 
   const navigate = useNavigate();
 
-  const mainNavi = event => {
-    event.preventDefault();
-    !enabled
-      ? fetch('http://10.58.0.63:8000/users/login', {
-          method: 'POST',
-          body: JSON.stringify({
-            email: userInfo.userId,
-            password: userInfo.userPw,
-          }),
-        })
-          .then(response => response.json())
-          .then(() => {
-            navigate('/main-minseok');
-          })
-      : alert('아무것도 입력되지 않았어요');
-  };
-
-  const idHandler = event => {
-    const { name, value } = event.target;
-    setUserInfo(prev => {
-      return { ...prev, [name]: value };
-    });
-  };
-
-  const pwHandler = event => {
+  const inputHandler = event => {
     const { name, value } = event.target;
     setUserInfo(prev => {
       return { ...prev, [name]: value };
@@ -58,14 +33,14 @@ const LoginMinseok = () => {
         <h1 className="loginTitle">Westagram</h1>
         <form onSubmit={mainNavi} className="userInterface">
           <input
-            onChange={idHandler}
+            onChange={inputHandler}
             name="userId"
             className="userName"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
-            onChange={pwHandler}
+            onChange={inputHandler}
             name="userPw"
             className="userPassword"
             type="password"
@@ -82,3 +57,21 @@ const LoginMinseok = () => {
 };
 
 export default LoginMinseok;
+
+// 백엔드 통신용
+// const mainNavi = event => {
+//   event.preventDefault();
+//   !enabled
+//     ? fetch('http://10.58.0.63:8000/users/login', {
+//         method: 'POST',
+//         body: JSON.stringify({
+//           email: userInfo.userId,
+//           password: userInfo.userPw,
+//         }),
+//       })
+//         .then(response => response.json())
+//         .then(() => {
+//           navigate('/main-minseok');
+//         })
+//     : alert('아무것도 입력되지 않았어요');
+// };

@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CommentList from './CommentList';
 
 const Feed = () => {
   const [inputText, setInputText] = useState('');
   const [commentData, setCommentData] = useState([]);
-  const [nextId, setNextId] = useState(1);
+  const [nextId, setNextId] = useState(4);
 
   const commentHandler = event => {
     const { value } = event.target;
@@ -24,6 +24,16 @@ const Feed = () => {
     setCommentData(nextComment);
     setInputText('');
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentData(data);
+      });
+  }, []);
 
   return (
     <article className="posting">
