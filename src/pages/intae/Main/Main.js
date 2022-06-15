@@ -1,19 +1,17 @@
-import React from 'react';
-import { useState } from 'react';
-import Comment from './Comment';
+import React, { useState, useEffect } from 'react';
+import Article from './Article';
 import './main.scss';
-function MainIntae() {
-  const [comment, setComment] = useState('');
-  const [commentList, setCommentList] = useState([]);
-
-  const onSubmit = e => {
-    e.preventDefault();
-    setCommentList(commnetValue => [comment, ...commnetValue]);
-    setComment('');
-  };
-  const onChange = e => {
-    setComment(e.target.value);
-  };
+function MainIntae(props) {
+  const [articleValue, setArticleValue] = useState([]);
+  useEffect(() => {
+    console.log('ddd');
+    fetch('/data/articleData.json')
+      .then(res => res.json()) // (2)
+      .then(data => {
+        setArticleValue(data);
+        console.log(data);
+      });
+  }, []);
 
   return (
     <>
@@ -63,75 +61,16 @@ function MainIntae() {
             <div className="story6 story" />
           </article>
 
-          <article className="article1">
-            <div className="user_profile">
-              <div className="user_photo">
-                <img src="../images/profile1.jpg" alt="" />
-                <div className="user_id">intarrr</div>
-              </div>
-              <div className="seemore_btn">
-                <img src="../images/option.png" alt="" />
-              </div>
-            </div>
-            <div className="feed_image">
-              <img src="images/profile1.jpg" alt="pizza" />
-            </div>
-            <section className="feed_contents">
-              <div className="feed_description">
-                <div className="response_icons">
-                  <div className="icons_left">
-                    <button className="heartbtn" />
-                    <button className="commentbtn" />
-                    <button className="directmessagebtn" />
-                  </div>
-                  <div className="icons_right">
-                    <i className="fa-regular fa-bookmark" />
-                  </div>
-                </div>
-                <div id="likes_figure" />
-                <div className="user_comment">
-                  <span className="my_id">intarrr</span>
-                  <span className="my_comment">
-                    집에 늦게 가는 것만이 능사가 아닙니다.
-                  </span>
-                </div>
-                <div className="registerd_reply">
-                  <span className="friends_id">seulgi</span>
-                  <span className="friends_comment">나도 먹고싶다!</span>
-                  <button className="reply_like">
-                    <i className="fa-regular fa-heart" id="small" />
-                  </button>
-                </div>
-                <div className="upload_date">2일 전</div>
-              </div>
-            </section>
-
-            <div className="reply">
-              <ul id="replylist">
-                {commentList.map((comment, index) => (
-                  <Comment
-                    id={index}
-                    key={index}
-                    value={comment}
-                    commentList={commentList}
-                    setCommentList={setCommentList}
-                  />
-                ))}
-              </ul>
-
-              <form action="" onSubmit={onSubmit}>
-                <input
-                  value={comment}
-                  onChange={onChange}
-                  className="replybox"
-                  id="replysubmit"
-                  type="text"
-                  placeholder=" 댓글 달기..."
-                />
-                <button className="submitbtn">게시</button>
-              </form>
-            </div>
-          </article>
+          {articleValue.map((ele, idx) => {
+            return (
+              <Article
+                key={idx}
+                userId={ele.user_id}
+                articleText={ele.article_text}
+                articleImg={ele.article_img}
+              />
+            );
+          })}
 
           <article className="article2" />
         </div>

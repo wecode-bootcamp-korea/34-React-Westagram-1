@@ -7,7 +7,21 @@ import './login.scss';
 function LoginIntae(props) {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   const [className, setClassName] = useState('login_button_before');
+  const onClick = () => {
+    fetch('http://172.20.10.3:8000/users/signin', {
+      method: 'post',
+      body: JSON.stringify({
+        email: id,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+    infoValid ? navigate('/main-intae') : navigate('/main-login');
+  };
+
   const onChangeId = e => {
     //id값이 onChangeId 함수가 끝나야만 등록된다.
     setId(e.target.value);
@@ -15,12 +29,8 @@ function LoginIntae(props) {
   const onChangePassword = e => {
     setPassword(e.target.value);
   };
-  const navigate = useNavigate();
-  const onClickLogin = () => {
-    navigate('/main-intae');
-  };
+
   const infoValid = id.includes('@') && password.length >= 5;
-  useEffect(() => {}, [id, password]);
 
   return (
     <>
@@ -45,8 +55,7 @@ function LoginIntae(props) {
               className={
                 infoValid ? 'login_button_after' : 'login_button_before'
               }
-              onClick={onClickLogin}
-              disabled={className.includes('before') ? true : false}
+              onClick={onClick}
             >
               로그인
             </button>

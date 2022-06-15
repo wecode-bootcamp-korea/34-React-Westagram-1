@@ -3,7 +3,7 @@ import React from 'react';
 const Comment = props => {
   const delBtn = () => {
     let copy = [...props.commentList];
-    copy.splice(Comment.id, 1);
+    copy.splice(props.id, 1);
     props.setCommentList(copy);
   };
 
