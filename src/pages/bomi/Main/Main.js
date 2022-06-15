@@ -81,12 +81,12 @@ const Main = () => {
         </div>
 
         <div className="story">
-          <img className="circle" src="../public/images/bomi/story2.JPG" />
+          <img className="circle" src="../images/bomi/story2.JPG" />
           <p className="storyId">storyID</p>
         </div>
 
         <div className="story">
-          <img className="circle" src="../public/images/bomi/story3.JPG" />
+          <img className="circle" src="../images/bomi/story3.JPG" />
           <p className="storyId">storyID</p>
         </div>
 

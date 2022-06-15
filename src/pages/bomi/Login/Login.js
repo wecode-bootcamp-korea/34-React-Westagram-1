@@ -11,8 +11,28 @@ const Login = () => {
 
   const goToMain = () => {
     if (classname === 'enableButton') {
-      navigate('/main');
+      navigate('/main-bomi');
     }
+  };
+
+  const server = e => {
+    e.preventDefault();
+    fetch('http://10.58.6.173:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.access_token) {
+          localStorage.setItem('token', result.access_token);
+          goToMain();
+        } else {
+          alert('아이디 또는 패스워드가 틀렸습니다.');
+        }
+      });
   };
 
   const handleIdInput = event => {
@@ -46,7 +66,7 @@ const Login = () => {
             type="password"
             placeholder="비밀번호"
           />
-          <button id="button" className={classname} onClick={goToMain}>
+          <button id="button" className={classname} onClick={server}>
             로그인
           </button>
         </div>
