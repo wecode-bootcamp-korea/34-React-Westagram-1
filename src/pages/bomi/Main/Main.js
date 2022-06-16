@@ -1,8 +1,182 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './main.scss';
+import '../common.scss';
+import Feed from './Feed';
+import MockFeedList from './mockFeedList';
 
-const MainBomi = () => {
-  return <div>Bomi</div>;
+const Main = () => {
+  return (
+    <>
+      <nav>
+        <header
+          className="logo"
+          style={{ fontSize: 25, marginTop: 5, cursor: 'pointer' }}
+        >
+          westagram
+        </header>
+        <input id="searchBar" type="text" placeholder="검색" />
+
+        <button type="button">
+          <img className="topmenu" src="../images/bomi/navHome.png" />
+        </button>
+        <button type="button">
+          <img className="topmenu" src="../images/bomi/navShare.webp" />
+        </button>
+        <button type="button">
+          <img className="topmenu" src="../images/bomi/navAdd.png" />
+        </button>
+        <button type="button">
+          <img className="topmenu" src="../images/bomi/navNav.png" />
+        </button>
+        <button type="button">
+          <img className="topmenu" src="../images/bomi/navHeart.jpeg" />
+        </button>
+        <button type="button">
+          <img
+            style={{ width: 25, height: 25, paddingLeft: 5, paddingRight: 5 }}
+            className="circle"
+            src="../images/bomi/IMG_8665.jpg"
+          />
+        </button>
+      </nav>
+
+      <section className="searchBox">
+        <div className="searchList"></div>
+      </section>
+
+      <section className="div_upper">
+        <div className="story">
+          <img className="circle" src="../images/bomi/story1.jpeg" />
+          <p className="storyId">storyID</p>
+        </div>
+
+        <div className="story">
+          <img className="circle" src="../images/bomi/story2.JPG" />
+          <p className="storyId">storyID</p>
+        </div>
+
+        <div className="story">
+          <img className="circle" src="../images/bomi/story3.JPG" />
+          <p className="storyId">storyID</p>
+        </div>
+
+        <div className="story">
+          <img className="circle" src="../images/bomi/story4.jpg" />
+          <p className="storyId">storyID</p>
+        </div>
+
+        <div className="story">
+          <img className="circle" src="../images/bomi/story5.JPG" />
+          <p className="storyId">storyID</p>
+        </div>
+
+        <div className="story">
+          <img className="circle" src="../images/bomi/feed-profile-1.jpeg" />
+          <p className="storyId">storyID</p>
+        </div>
+
+        <div className="story">
+          <img className="circle" src="../images/bomi/story1.jpeg" />
+          <p className="storyId">storyID</p>
+        </div>
+
+        <div className="story">
+          <img className="circle" src="../images/bomi/story2.JPG" />
+          <p className="storyId">storyID</p>
+        </div>
+
+        <div className="story">
+          <img className="circle" src="../images/bomi/story3.JPG" />
+          <p className="storyId">storyID</p>
+        </div>
+      </section>
+
+      <section className="div_feeds">
+        <Feed
+          img="../images/bomi/feed.png"
+          name="do0_nct"
+          text="this is first feed"
+        />
+        <MockFeedList />
+      </section>
+
+      <section className="div_main_right">
+        <div className="sideProfile">
+          <img
+            className="circle"
+            style={{ position: 'absolute', top: 1 }}
+            src="../images/bomi/IMG_8665.jpg"
+          />
+          <span id="sideProfileId"> user_id</span>
+          <p id="sideProfileName"> user_name </p>
+          <button className="blueButton"> 전환 </button>
+        </div>
+
+        <p id="rec"> 회원님을 위한 추천</p>
+        <button style={{ position: 'absolute', top: 70, right: 10 }}>
+          모두 보기
+        </button>
+
+        <div style={{ top: 10 }} className="recboxWrapper">
+          <img className="recboxImg" src="../images/bomi/rec2.png" />
+          <span className="recboxId"> user_id </span>
+          <p className="recboxName"> user_name </p>
+          <button className="follow"> 팔로우 </button>
+        </div>
+
+        <div style={{ top: 60 }} className="recboxWrapper">
+          <img className="recboxImg" src="../images/bomi/rec3.png" />
+          <span className="recboxId"> user_id </span>
+          <p className="recboxName"> user_name </p>
+          <button className="follow"> 팔로우 </button>
+        </div>
+
+        <div style={{ top: 110 }} className="recboxWrapper">
+          <img className="recboxImg" src="../images/bomi/rec4.png" />
+          <span className="recboxId"> user_id </span>
+          <p className="recboxName"> user_name </p>
+          <button className="follow"> 팔로우 </button>
+        </div>
+
+        <div style={{ top: 160 }} className="recboxWrapper">
+          <img className="recboxImg" src="../images/bomi/rec5.png" />
+          <span className="recboxId"> user_id </span>
+          <p className="recboxName"> user_name </p>
+          <button className="follow"> 팔로우 </button>
+        </div>
+
+        <div style={{ top: 210 }} className="recboxWrapper">
+          <img className="recboxImg" src="../images/bomi/rec1.png" />
+          <span className="recboxId"> user_id </span>
+          <p className="recboxName"> user_name </p>
+          <button className="follow"> 팔로우 </button>
+        </div>
+      </section>
+
+      <div className="popup">
+        <button
+          className="popupElement"
+          style={{ borderTop: 'none', color: 'red' }}
+        >
+          신고
+        </button>
+        <button
+          id="deleteComment"
+          className="popupElement"
+          style={{ color: 'red' }}
+        >
+          삭제
+        </button>
+        <button
+          id="cancelPopup"
+          className="popupElement"
+          style={{ borderBottom: 'none', color: 'black' }}
+        >
+          취소
+        </button>
+      </div>
+    </>
+  );
 };
 
-export default MainBomi;
+export default Main;

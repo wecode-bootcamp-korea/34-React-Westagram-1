@@ -1,0 +1,91 @@
+li {
+  list-style-type: none;
+}
+
+.div_feeds {
+  width: 490px;
+  height: 900px;
+  position: relative;
+  left: 127px;
+  top: 50px;
+  padding-bottom: 60px;
+
+  .article {
+    width: 470px;
+    position: relative;
+    border-radius: 10px;
+    border:  1px solid #dbdbdb;
+    left: 8px;
+    top: 20px;
+
+    .feedProfile {
+      height: 58px;
+      width: 470px;
+      position: absolute;
+      top: 0px;
+      padding-top: 50px;
+
+      .profilePic {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        position: absolute;
+        left: 10px;
+        top: 13px;
+        cursor: pointer;
+      }
+    }
+
+    .imageWrapper {
+      position: absolute;
+      top: 58px;
+    }
+
+    .barWrapper {
+      width: 470px;
+      height: 46px;
+      position: absolute;
+      top: 643.5px;
+
+      #heart,
+      #comment,
+      #share,
+      #save {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 8px;
+        z-index: 10;
+      }
+
+      .buttonOpacity:hover {
+        opacity: 0.25;
+      }
+    }
+
+    .reaction {
+      width: 446px;
+      top: 683px;
+      padding: 0px 12px;
+      margin-top: 690px;
+
+      .commentSection {
+        list-style: none;
+        padding-left: 0px;
+      }
+    }
+
+    .comment {
+      display: flex;
+      width: 446px;
+      height: 41px;
+      top: 805px;
+      padding: 4px 12px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-top:  1px solid #dbdbdb;
+    }
+  }
+}
