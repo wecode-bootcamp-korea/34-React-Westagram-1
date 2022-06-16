@@ -1,8 +1,8 @@
-import './main.scss';
 import Header from './Header';
 import Feed from './Feed';
 import History from './History';
 import Fallow from './Fallow';
+import './main.scss';
 
 const MainMinseok = () => {
   return (
