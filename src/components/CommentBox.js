@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Comment from './Comment';
+import '../pages/bohyun/Main/main.scss';
 
 const CommentBox = () => {
   const [commentBox, setCommentBox] = useState([]);
@@ -17,11 +17,10 @@ const CommentBox = () => {
       <ul>
         {commentBox.map(comment => {
           return (
-            <Comment
-              key={comment.id}
-              name={comment.userName}
-              comment={comment.content}
-            />
+            <div key={comment.id}>
+              <span className="boldID">{comment.userName}</span>
+              <span className="newCommentBox">{comment.content}</span>
+            </div>
           );
         })}
       </ul>

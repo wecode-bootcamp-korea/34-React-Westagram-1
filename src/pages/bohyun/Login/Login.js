@@ -10,22 +10,23 @@ const LoginBohyun = () => {
   const [newClass, setNewClass] = useState('loginButton');
 
   const postUserData = () => {
-    fetch('http://10.58.5.166:8000/users/signin', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: 'park@gmail.com',
-        password: 'P@ssw0rd!',
-      }),
-    })
-      .then(response => response.json())
-      .then(result => {
-        if (result.access_token) {
-          localStorage.setItem('access_token', result.access_token);
-          console.log(result.access_token);
-        }
-      });
     if (id.includes('@') && pw.length > 4) {
       navigate('/main-bohyun');
+
+      fetch('http://10.58.5.166:8000/users/signin', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: 'park@gmail.com',
+          password: 'P@ssw0rd!',
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.access_token) {
+            localStorage.setItem('access_token', result.access_token);
+            console.log(result.access_token);
+          }
+        });
     }
   };
 
@@ -69,10 +70,10 @@ const LoginBohyun = () => {
             </div>
             <div className="pw">
               <input
-                onChange={onChangePw}
                 type="password"
                 placeholder="Password"
                 className="inputPW"
+                onChange={onChangePw}
               />
             </div>
 

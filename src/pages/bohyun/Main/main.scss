@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+p {
+  margin: 0;
+  line-height: 1.2em;
+}
+
 .main {
   width: 821px;
   margin: 0 auto;
@@ -64,6 +69,12 @@
       margin: 30px 5px 15px 5px;
       border: 1px solid silver;
       border-radius: 10px;
+      .boldID {
+        margin-left: 5px;
+        font-family: sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+      }
       .user_whole {
         display: flex;
         margin: 5px;
@@ -118,9 +129,6 @@
           align-content: center;
           font-family: sans-serif;
           font-size: 13px;
-          .boldID {
-            font-weight: 600;
-          }
         }
       }
       .descriptions {
@@ -149,6 +157,7 @@
         }
         .friendComment_heart {
           margin: 0px 0px 10px 100px;
+          width: 13px;
         }
       }
       .newCommentBox {
@@ -161,7 +170,7 @@
           position: center;
           width: 433px;
           height: 20px;
-          .entry .boldID {
+          .entry {
             margin: 5px;
           }
           .entryHeart {
@@ -210,71 +219,68 @@
 .comments_button {
   margin: 0px 25px 5px 5px;
   width: 5%;
-}
-#postButton {
-  width: 45px;
-  height: 25px;
-  border-radius: 5px;
-  border: 5px;
-  color: white;
-  font-family: sans-serif;
-  background-color: rgb(20, 161, 255);
+  #postButton {
+    width: 45px;
+    height: 25px;
+    border-radius: 5px;
+    border: 5px;
+    color: white;
+    font-family: sans-serif;
+    background-color: rgb(20, 161, 255);
+  }
 }
 
-p {
-  margin: 0;
-  line-height: 1.2em;
-}
 /* right */
+#greyText {
+  color: grey;
+}
 .main_right {
   width: 319px;
   margin-top: 37px;
   margin-right: 5px;
   justify-content: space-around;
-}
-.right_profile {
-  display: flex;
-}
-.right_profile_pic {
-  width: 50px;
-  height: 50px;
-  margin: 5px 0px 5px 5px;
-  border-radius: 50%;
-}
-.right_profile_text {
-  margin: 15px 0px 0px 15px;
-  font-family: sans-serif;
-  font-size: 13px;
-}
-#greyText {
-  color: grey;
-}
-/* right stories */
-.right_stories {
-  margin-top: 10px;
-  border: 1px solid rgb(214, 214, 214);
-  border-radius: 10px;
-  font-family: sans-serif;
-  font-size: 13px;
-}
+  .right_profile {
+    display: flex;
+    .right_profile_pic {
+      width: 50px;
+      height: 50px;
+      margin: 5px 0px 5px 5px;
+      border-radius: 50%;
+    }
+    .right_profile_text {
+      margin: 15px 0px 0px 15px;
+      font-family: sans-serif;
+      font-size: 13px;
+    }
+  }
 
-.right_stories_head {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px;
-  color: grey;
-}
-.right_stories_entry {
-  display: flex;
-}
-.round_img {
-  width: 30px;
-  height: 30px;
-  margin: 5px 0px 5px 5px;
-  border-radius: 50%;
-}
-.right_stories_text {
-  margin: 5px 0px 0px 10px;
+  /* right stories */
+
+  .right_stories {
+    margin-top: 10px;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 13px;
+    .right_stories_head {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+      color: grey;
+    }
+    .right_stories_entry {
+      display: flex;
+    }
+    .right_stories_text {
+      margin: 5px 0px 0px 10px;
+    }
+  }
+  .round_img {
+    width: 30px;
+    height: 30px;
+    margin: 5px 0px 5px 5px;
+    border-radius: 50%;
+  }
 }
 
 /* right recommendations */
@@ -285,22 +291,22 @@ p {
   border-radius: 10px;
   font-family: sans-serif;
   font-size: 13px;
-}
-.right_recommendations_head {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px;
-  color: grey;
-}
-.right_recommendations_single {
-  display: flex;
-  justify-content: space-between;
-}
-.right_recommendations_left {
-  display: flex;
-}
-.right_recommendations_text {
-  margin: 5px 0px 0px 15px;
+  .right_recommendations_head {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    color: grey;
+  }
+  .right_recommendations_single {
+    display: flex;
+    justify-content: space-between;
+    .right_recommendations_left {
+      display: flex;
+    }
+    .right_recommendations_text {
+      margin: 5px 0px 0px 15px;
+    }
+  }
 }
 .right_recommendations_text p:nth-child(1) {
   font-weight: 600;
