@@ -4,7 +4,7 @@ import Aside from '../Main/components/Aside/Aside';
 import Footer from '../../../components/Footer/Footer';
 import './main.scss';
 
-const MainMinseok = () => {
+export const MainMinseok = () => {
   return (
     <div className="twoDividedArea">
       <Header />
