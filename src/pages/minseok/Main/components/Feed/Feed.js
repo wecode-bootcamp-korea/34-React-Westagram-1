@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import CommentList from './CommentList';
+import CommentList from '../CommentList/CommentList';
+import './feed.scss';
 
 const Feed = () => {
   const [inputText, setInputText] = useState('');

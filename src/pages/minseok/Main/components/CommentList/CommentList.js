@@ -1,3 +1,5 @@
+import './commentList.scss';
+
 const CommentList = ({ comment, setCommentData, commentDataId }) => {
   const removeComment = () =>
     setCommentData(prev => prev.filter(el => el.userId !== commentDataId));

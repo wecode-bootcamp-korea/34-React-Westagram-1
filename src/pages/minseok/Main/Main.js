@@ -1,7 +1,7 @@
-import Header from './Header';
-import Feed from './Feed';
-import History from './History';
-import Fallow from './Fallow';
+import Header from '../../../components/Header/Header';
+import Feed from '../Main/components/Feed/Feed';
+import Aside from '../Main/components/Aside/Aside';
+import Footer from '../../../components/Footer/Footer';
 import './main.scss';
 
 const MainMinseok = () => {
@@ -11,25 +11,8 @@ const MainMinseok = () => {
       <div className="bottomArea">
         <main className="main">
           <Feed />
-          <aside className="sidebar">
-            <div className="sidebarHost">
-              <img
-                className="sidebarHostImage"
-                src="/images/minseok/penguin-img.png"
-                alt="호스트이미지"
-              />
-              <div className="sidebarHostId">
-                <p className="sidebarHostIdName">김펭귄</p>
-                <p className="sidebarHostIdDescription">프론트 앤드 개발자</p>
-              </div>
-            </div>
-            <History />
-            <Fallow />
-          </aside>
-          <footer className="footer">
-            <p className="footerInformation">위스타그램 정보입니다.</p>
-            <p className="footerMakeYear">2022년도에 제작</p>
-          </footer>
+          <Aside />
+          <Footer />
         </main>
       </div>
     </div>

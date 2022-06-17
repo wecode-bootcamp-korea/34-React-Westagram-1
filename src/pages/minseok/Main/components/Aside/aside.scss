@@ -1,0 +1,35 @@
+.sidebar {
+  grid-area: aside;
+
+  .sidebarHost {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .sidebarHostImage {
+      width: 5rem;
+      height: 5rem;
+      border: none;
+      border-radius: 50%;
+    }
+
+    .sidebarHostId {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 1rem;
+
+      .sidebarHostIdName {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      .sidebarHostIdDescription {
+        margin-top: 0.5rem;
+        opacity: 0.3;
+        font-weight: 700;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

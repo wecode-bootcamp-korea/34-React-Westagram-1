@@ -1,3 +1,5 @@
+import './fallow.scss';
+
 const Fallow = () => {
   return (
     <div className="sidebarFallow">

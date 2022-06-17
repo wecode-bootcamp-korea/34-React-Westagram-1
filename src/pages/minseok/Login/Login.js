@@ -58,7 +58,6 @@ const LoginMinseok = () => {
 
 export default LoginMinseok;
 
-// 백엔드 통신용
 // const mainNavi = event => {
 //   event.preventDefault();
 //   !enabled
