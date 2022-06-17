@@ -1,0 +1,68 @@
+.sidebarFallow {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 0.1rem solid #e9e9e9;
+  background-color: #ffffff;
+
+  .sidebarFallowTitle {
+    display: flex;
+    margin-bottom: 1rem;
+
+    h1 {
+      opacity: 0.3;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    button {
+      margin-left: auto;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+  }
+
+  .sidebarFallowUser {
+    display: flex;
+    flex-direction: column;
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebarFallowUserList {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .sidebarFallowUserListImage {
+        width: 3rem;
+        height: 3rem;
+        padding: 0.1rem;
+        border: none;
+        border-radius: 50%;
+      }
+
+      .sidebarFallowUserListId {
+        margin-left: 1rem;
+
+        .sidebarFallowUserListIdName {
+          font-size: 1.3rem;
+          font-weight: 700;
+        }
+
+        .sidebarFallowUserListIdTime {
+          margin-top: 0.5rem;
+          opacity: 0.3;
+          font-size: 1.3rem;
+          font-weight: 700;
+        }
+      }
+
+      .sidebarFallowUserListButton {
+        color: #53a5f2;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

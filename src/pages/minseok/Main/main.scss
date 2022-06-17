@@ -1,0 +1,40 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 버튼 공통 스타일링 */
+.commonButton {
+  margin-left: auto;
+  border: none;
+  background-color: #ffffff;
+  outline: 0;
+  cursor: pointer;
+}
+
+.twoDividedArea {
+  display: grid;
+  grid:
+    'top' 1fr
+    'bottom' 9fr;
+
+  .bottomArea {
+    grid-area: bottom;
+    height: 90vh;
+    padding-top: 3rem;
+    background-color: #f0f8ff;
+    overflow: scroll;
+
+    .main {
+      display: grid;
+      grid:
+        '. article aside .' 2fr
+        '. article footer .' 1fr
+        / 1fr 5fr 3fr 1fr;
+      gap: 3rem;
+    }
+  }
+}

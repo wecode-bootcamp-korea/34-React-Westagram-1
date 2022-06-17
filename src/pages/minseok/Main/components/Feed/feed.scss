@@ -1,0 +1,111 @@
+.posting {
+  grid-area: article;
+
+  .writerProfile {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 0.1rem solid #e9e9e9;
+    background-color: #ffffff;
+
+    .writerProfileImage {
+      width: 3rem;
+      height: 3rem;
+      border: none;
+      border-radius: 50%;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-left: 1rem;
+    }
+
+    .writerProfileDetails {
+      width: 3rem;
+      height: 3rem;
+      margin-left: auto;
+    }
+  }
+  .postingImage {
+    width: 100%;
+    height: 60%;
+    border-right: 0.1rem solid #e9e9e9;
+    border-bottom: 0.1rem solid #e9e9e9;
+    border-left: 0.1rem solid #e9e9e9;
+    background-color: #ffffff;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .postingIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-right: 0.1rem solid #e9e9e9;
+    border-bottom: 0.1rem solid #e9e9e9;
+    border-left: 0.1rem solid #e9e9e9;
+    background-color: #ffffff;
+
+    .postingIconHeart {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .postingIconSayballon {
+      width: 3rem;
+      height: 3rem;
+      margin-left: 1rem;
+    }
+
+    .postingIconShare {
+      width: 3rem;
+      height: 3rem;
+      margin-left: 1rem;
+    }
+
+    .postingIconBookmark {
+      width: 3rem;
+      height: 3rem;
+      margin-left: auto;
+    }
+  }
+  .postingComment {
+    padding: 1rem;
+    border-right: 0.1rem solid #e9e9e9;
+    border-left: 0.1rem solid #e9e9e9;
+    background-color: #ffffff;
+    font-size: 1.3rem;
+
+    .RepresentativeUser {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .addComment {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 0.1rem solid #e9e9e9;
+    border-right: 0.1rem solid #e9e9e9;
+    border-bottom: 0.1rem solid #e9e9e9;
+    border-left: 0.1rem solid #e9e9e9;
+    background-color: #ffffff;
+
+    .addCommentText {
+      width: 50rem;
+      height: 3rem;
+      border: none;
+    }
+
+    .addCommentButton {
+      width: 5rem;
+      height: 3rem;
+      color: #53a5f2;
+      font-size: 1.6rem;
+    }
+  }
+}
